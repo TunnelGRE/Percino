@@ -27,7 +27,6 @@ func main() {
 
 	shellcode := []byte("")
 
-	// Encryption
 	encryptedShellcode, err := encryptDES3(shellcode, key, iv)
 	if err != nil {
 		fmt.Println("Error 3DES:", err)
