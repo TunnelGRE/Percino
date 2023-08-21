@@ -21,4 +21,17 @@ Key Features:
 
 
 
-I provide a light version without sandbox & analysis evasion because the compiled version is very heavy. TIP: use a packer to compress better.
+I provide a light version without sandbox & analysis evasion because the compiled version is very heavy. TIP: use a packer to compress better & signing the binary
+
+
+CS:
+
+
+![Cattura1111](https://github.com/TunnelGRE/Augustus/assets/130594453/f11671cc-62a9-4f0f-b21d-9dbb5a1b391f)
+
+
+
+MSF:
+![Cattura22222](https://github.com/TunnelGRE/Augustus/assets/130594453/c132980a-895e-4e3c-b794-9a920eaf1b08)
+
+
