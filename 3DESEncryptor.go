@@ -1,3 +1,12 @@
+/*
+            Project Augustus Loader
+                VERSION: 1.0
+ AUTHOR: @tunnelgre - https://twitter.com/tunnelgre
+	              
+
+*/
+
+
 package main
 
 import (
