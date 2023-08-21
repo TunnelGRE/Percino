@@ -20,7 +20,7 @@ Key Features:
 - Process Hollowing
 
 
-
+TIP: Compile with 'go build -ldflags "-s -w" main.go' because it is so heavy. If you want to be more slim use packer :)
 
 CS:
 
