@@ -3,7 +3,7 @@
 
 
 
-![Augustus](https://github.com/TunnelGRE/Augustus/assets/130594453/03a6a258-279a-4364-ab2f-a0dee061f4eb)
+![Augustus](https://github.com/TunnelGRE/Augustus/assets/130594453/966b2764-5d3d-4afb-9dd8-efe96476dced)
 
 
 
@@ -26,12 +26,14 @@ I provide a light version without sandbox & analysis evasion because the compile
 
 CS:
 
+![CS](https://github.com/TunnelGRE/Augustus/assets/130594453/1bd70e4d-2487-4526-bad0-7d764a395484)
 
-![Cattura1111](https://github.com/TunnelGRE/Augustus/assets/130594453/f11671cc-62a9-4f0f-b21d-9dbb5a1b391f)
+
 
 
 
 MSF:
-![Cattura22222](https://github.com/TunnelGRE/Augustus/assets/130594453/c132980a-895e-4e3c-b794-9a920eaf1b08)
+![MSF](https://github.com/TunnelGRE/Augustus/assets/130594453/8d3b24bb-224c-4efb-bcc5-819eae7beb6a)
+
 
 
