@@ -21,8 +21,6 @@ Key Features:
 
 
 
-I provide a light version without sandbox & analysis evasion because the compiled version is very heavy. TIP: use a packer to compress better & signing the binary
-
 
 CS:
 
