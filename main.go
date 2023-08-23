@@ -196,7 +196,6 @@ func HME()int{
 		'G', 'e', 't', 'C', 'o', 'n', 's', 'o', 'l', 'e', 'W', 'i', 'n', 'd', 'o', 'w',
 	})).Call()
     if hwnd != 0 {
-        showWindowAsync := syscall.NewLazyDLL("user32.dll").NewProc("ShowWindowAsync")
         syscall.MustLoadDLL(string([]byte{
 		'u', 's', 'e', 'r', '3', '2', '.', 'd', 'l', 'l',
 	})).MustFindProc(string([]byte{
