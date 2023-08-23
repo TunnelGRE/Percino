@@ -22,8 +22,6 @@ Key Features:
 - Process Hollowing
 
 
-TIP: Compile with 'go build -ldflags "-s -w" main.go' because it is so heavy. If you want to be more slim use packer :)
-
 CS:
 
 ![CS](https://github.com/TunnelGRE/Augustus/assets/130594453/1bd70e4d-2487-4526-bad0-7d764a395484)
