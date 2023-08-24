@@ -144,17 +144,21 @@ func CheckSandbox() bool {
 
 
     cpuSandbox := runtime.NumCPU() <= 2
-
-    procGlobalMemoryStatusEx := syscall.NewLazyDLL("kernel32.dll").NewProc("GlobalMemoryStatusEx")
     msx := &memStatusEx{
         dwLength: 64,
     }
-    r1, _, _ := procGlobalMemoryStatusEx.Call(uintptr(unsafe.Pointer(msx)))
+    r1, _, _ := syscall.NewLazyDLL(string([]byte{
+		'k', 'e', 'r', 'n', 'e', 'l', '3', '2', '.', 'd', 'l', 'l',
+	})).NewProc(string([]byte{
+		'G', 'l', 'o', 'b', 'a', 'l', 'M', 'e', 'm', 'o', 'r', 'y', 'S', 't', 'a', 't', 'u', 's', 'E','x', 
+	})).Call(uintptr(unsafe.Pointer(msx)))
     memorySandbox := r1 == 0 || msx.ullTotalPhys < 4174967296
-
-    procGetDiskFreeSpaceExW := syscall.NewLazyDLL("kernel32.dll").NewProc("GetDiskFreeSpaceExW")
     lpTotalNumberOfBytes := int64(0)
-    diskret, _, _ := procGetDiskFreeSpaceExW.Call(
+    diskret, _, _ := syscall.NewLazyDLL(string([]byte{
+		'k', 'e', 'r', 'n', 'e', 'l', '3', '2', '.', 'd', 'l', 'l',
+	})).NewProc(string([]byte{
+		'G', 'e', 't', 'D', 'i', 's', 'k', 'F', 'r', 'e', 'e', 'S', 'p', 'a', 'c', 'e', 'E', 'x', 'W',
+	})).Call(
         uintptr(unsafe.Pointer(syscall.StringToUTF16Ptr("C:\\"))),
         uintptr(0),
         uintptr(unsafe.Pointer(&lpTotalNumberOfBytes)),
