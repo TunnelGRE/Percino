@@ -21,7 +21,7 @@ Key Features:
 - Process Hollowing
 
 
-TIP: The golang compiled version is so heavy. Use a packer :)
+TIP: I recommended to sign signing the binary with CS
 
 CS:
 
