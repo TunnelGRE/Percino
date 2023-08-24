@@ -22,6 +22,8 @@ Key Features:
 - Process Hollowing
 
 
+TIP: The golang compiled version is so heavy. Use a packer :)
+
 CS:
 
 ![CS](https://github.com/TunnelGRE/Augustus/assets/130594453/1bd70e4d-2487-4526-bad0-7d764a395484)
