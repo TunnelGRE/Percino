@@ -17,7 +17,6 @@ Key Features:
 - 3DES Encryption
 - Sandbox Evasion
 - Analysis Evasion
-- Hide Console
 - Execution delay
 - Process Hollowing
 
