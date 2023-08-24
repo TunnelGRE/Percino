@@ -21,7 +21,7 @@ Key Features:
 - Process Hollowing
 
 
-TIP: I recommended to sign signing the binary with CS
+TIP: I recommended to sign the binary with CS
 
 CS:
 
