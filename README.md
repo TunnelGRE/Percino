@@ -7,7 +7,7 @@
 
 
 
-Augustus is a Golang loader that execute the shellcode utilizing the process hollowing technique with anti-sandbox and anti-analysis measures. 
+Augustus is a Golang loader that execute shellcode utilizing the process hollowing technique with anti-sandbox and anti-analysis measures. 
 The shellcode is encrypted with the Triple DES (3DES) encryption algorithm.
 
 Full EDR bypass with any C2 Framework. Tested with Cobalt Strike against MDE EDR.
