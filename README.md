@@ -1,13 +1,9 @@
-# Augustus
+# Percino
 ## Evasive Golang Loader
 
 
 
-![Augustus](https://github.com/TunnelGRE/Augustus/assets/130594453/966b2764-5d3d-4afb-9dd8-efe96476dced)
-
-
-
-Augustus is a Golang loader that execute shellcode utilizing the process hollowing technique with anti-sandbox and anti-analysis measures. 
+Percino is a Golang loader that execute shellcode utilizing the process hollowing technique with anti-sandbox and anti-analysis measures. 
 The shellcode is encrypted with the Triple DES (3DES) encryption algorithm.
 
 Full EDR bypass with any C2 Framework. Tested with Cobalt Strike against MDE EDR.
